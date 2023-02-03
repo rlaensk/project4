@@ -68,7 +68,7 @@ $(function () {
     }
 
     if (mal1||mal2) {
-        setInterval(slider_, 2000);
+        setInterval(slider_, 3000);
     }
 
 
