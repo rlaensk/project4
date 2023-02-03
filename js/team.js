@@ -146,10 +146,12 @@ $(function(){
              $('#games').stop().animate({ marginLeft: '-0' });
          });
          $('.g_dot2').click(function () {
-             $('#games').stop().animate({ marginLeft: '-50%' });
+             $('#games').stop().animate({ marginLeft: '-40%' });
          });
-        
-         $('.g_dot3').css('display','none');
+         $('.g_dot3').click(function(){
+            $('#games').stop().animate({marginLeft:'-80%'});
+        });
+
      }
      });
  
@@ -190,11 +192,13 @@ $(function(){
         $('#games2').stop().animate({marginLeft:'-0'});
     });
     $('.g_dot2-2').click(function(){
-        $('#games2').stop().animate({marginLeft:'-50%'});
+        $('#games2').stop().animate({marginLeft:'-40%'});
     });
-  
-    $('.g_dot2-3').css('display','none');
-    }
+    $('.g_dot2-3').click(function(){
+        $('#games2').stop().animate({marginLeft:'-80%'});
+    });
+}
+
 });
 
 
@@ -227,7 +231,6 @@ $(function () {
         $('.popular').stop().animate({ marginLeft: '-20%' }, 700, function () {
             $('.popular a:first').appendTo('.popular');
             $('.popular').css({ marginLeft: 0 });
-
         });
     });
 }
@@ -445,3 +448,53 @@ $(function(){
         $(this).siblings('span').css('visibility','hidden');
     });
 });
+
+
+//index.js
+
+let slider = document.querySelector("#games")
+let innerSlider = document.querySelector("#games_gi")
+let pressed = false
+let startx
+let x
+
+slider.addEventListener("mousedown", e => {
+  pressed = true
+  startx = e.offsetX - innerSlider.offsetLeft
+  slider.style.cursor = "grabbing"
+})
+
+slider.addEventListener("mouseenter", () => {
+  slider.style.cursor = "grab"
+})
+
+slider.addEventListener("mouseup", () => {
+  slider.style.cursor = "grab"
+})
+
+
+
+window.addEventListener("mouseup", () => {
+  pressed = false
+})
+
+slider.addEventListener("mousemove", e => {
+  if (!pressed) return
+  e.preventDefault()
+  x = e.offsetX
+
+  innerSlider.style.left = `${x - startx}px`
+  checkboundary()
+})
+
+function checkboundary() {
+  let outer = slider.getBoundingClientRect()
+  let inner = innerSlider.getBoundingClientRect()
+
+  if (parseInt(innerSlider.style.left) > 0) {
+    innerSlider.style.left = "0px"
+  } else if (inner.right < outer.right) {
+    innerSlider.style.left = `-${inner.width - outer.width}px`
+  }
+}
+
