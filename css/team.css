@@ -343,7 +343,7 @@ a {
 }
 
 .all {
-    width: 9%;
+    width: 88px;
     height: 30px;
     line-height: 27px;
     display: block;
@@ -353,6 +353,8 @@ a {
     color: #eee;
     background: rgba(255, 255, 255, 0);
 }
+
+.all:hover{background-color: #5cc8d8;}
 
 
 .sale_item {
@@ -734,11 +736,11 @@ a {
 }
 .popularity_bt .popularity_bt1 span {
     display: block;
-    background-color: #018699;
+    background-color: #eee;
     width: 30px;
     height: 30px;
     line-height: 29px;
-    color: #eee;
+    color: #222222;
     border-radius: 50%;
     text-align: center;
 }
@@ -1099,11 +1101,11 @@ hr {
 
 .popularity_bt .popularity_bt2 span {
     display: block;
-    background-color: #018699;
+    background-color: #eee;
     width: 30px;
     height: 30px;
     line-height: 29px;
-    color: #eee;
+    color: #222222;
     border-radius: 50%;
     text-align: center;
 }
@@ -1298,11 +1300,14 @@ hr {
     font-size: 12px;
     line-height: 30px;
     display: block;
-    color: #222222;
-    border: 1px solid #eee;
+    color: #eee;
+    border: 1px solid #5cc8d8 ;
     text-align: center;
     margin-top: 10%;
-    background-color: white;
+    background-color: transparent;
+}
+.cat_text a:hover{
+    background-color: #5cc8d8;
 }
 
 .plus_p {
@@ -1379,10 +1384,17 @@ img:hover {
     margin-left: 10px;
 }
 
-.popularity_bt .popularity_bt1 span,
-.popularity_bt .popularity_bt2 span:hover {
-    opacity: 0.7;
+.popularity_bt .popularity_bt1 span:hover{
+    color: #eee;
     cursor: pointer;
+    background-color: #5cc8d8;
+
+}
+.popularity_bt .popularity_bt2 span:hover {
+    color: #eee;
+    cursor: pointer;
+    background-color: #5cc8d8;
+
 }
 
 
@@ -2335,7 +2347,7 @@ img:hover {
 @media(min-width:600px)and (max-width:899px) {
 
 
-
+    .all{width: 88px ;}
     #slider {
         width: 100%;
         height: 542px;
@@ -2366,6 +2378,7 @@ img:hover {
         width: 100%;
         height: 343px;
     }
+ 
 
     .dot {
 

@@ -29,7 +29,7 @@ $(function () {
 
         function slider() {
 
-            $('.slider_hidden').stop().animate({ marginLeft: -813 }, 800, function () {
+            $('.slider_hidden').stop().animate({ marginLeft: '-100%' }, 800, function () {
                 $('.slider_hidden > div:first').appendTo('.slider_hidden');
                 $('.slider_hidden').css({ marginLeft: 0 });
 
