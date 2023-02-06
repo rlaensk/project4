@@ -22,14 +22,14 @@ $(function () {
         $('.slider_text > div').css('background-color', '#44444417');
         $('.slider_text > div').eq(i).find('.slider_b').css('background-color', '#444444').stop().animate({
             width: '100%'
-        }, 3000);
+        }, 4000);
         $('.slider_text > div').css('background-color', 'transparent');
 
 
 
         function slider() {
 
-            $('.slider_hidden').stop().animate({ marginLeft: '-100%' }, 800, function () {
+            $('.slider_hidden').stop().animate({ marginLeft: '-100%' }, 1000, function () {
                 $('.slider_hidden > div:first').appendTo('.slider_hidden');
                 $('.slider_hidden').css({ marginLeft: 0 });
 
@@ -47,7 +47,7 @@ $(function () {
             $('.slider_text > div').eq(i).css('background-color', '#44444417');
             $('.slider_text > div').eq(i).find('.slider_b').css('background-color', '#444444').stop().animate({
                 width: '100%'
-            }, 3000);
+            }, 4000);
             $('.slider_text > div').css('background-color', 'transparent');
 
 
